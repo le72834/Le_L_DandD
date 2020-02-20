@@ -1,4 +1,4 @@
-![All About the Drag and Drop Puzzle Game][images/hero_image.png]
+![All About the Drag and Drop Puzzle Game](images/hero_image.png)
 
 # A Drag and Drop Puzzle Game.
 This is a simple drag and drop game with 4 different broad game. Each broad game have different picture we have to solve. We just need drag and drop to make the image complete.
