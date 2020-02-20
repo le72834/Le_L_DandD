@@ -4,8 +4,8 @@
 	const puzzleButtons = document.querySelectorAll('#buttonHolder img'),
 				puzzlePieces = document.querySelectorAll('.puzzle-pieces img'),
 				dropZones = document.querySelectorAll('.drop-zone'),
-				gameBoard = document.querySelector('.puzzle-board');
-
+				gameBoard = document.querySelector('.puzzle-board'),
+				puzzleZone = document.querySelector('.puzzle-pieces');
 	const pieceName =["topLeft", "topRight", "bottomLeft", "bottomRight"];
 	function changeImageSet () {
 		//change all the image elements on the page -> draggable image sources,
@@ -32,7 +32,7 @@
 
 	}
 	function allowDragOver(event) {
-		if (this.childNodes.length == 0){
+		if (this.childNodes.length === 0){
 		event.preventDefault();
 		console.log('dragged over a drop zone');
 		}
@@ -50,15 +50,18 @@
 		let currentImage = event.dataTransfer.getData("text/plain");
 		//add that image to whatever drop zone we're dropping out image on
 		event.target.appendChild(document.querySelector(`#${currentImage}`));
-	
-
+	}
+	function resetButtons () {
+		for (let i = 0; i < puzzlePieces.length; i++) {
+			puzzleZone.appendChild(puzzlePieces[i]);
+		}
 	}
 	//add event handling here
 
 	//click on the bottom buttons to change the puzzle image we're woking with
 	puzzleButtons.forEach(button => {
 		button.addEventListener('click', changeImageSet);
-
+		button.addEventListener('click', resetButtons);
 
 	});
 
