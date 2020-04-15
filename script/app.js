@@ -38,7 +38,7 @@
 		}
 	}
 	function allowDrop(event) {
-
+		//
 		//event.prevenDefault();
 
 		if (event.preventDefault) event.preventDefault();
